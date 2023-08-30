@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  api_users:
+    build:
+      context: ./users
+      dockerfile: Dockerfile
+    container_name: users
+    ports:
+      - 8000:8000
+    env_file:
+      - .env.production  
+    volumes:
+      - ./users:/usr/src/app
+      - /usr/src/app/node_modules
+  api_transitions:
+    build:
+      context: ./transitions
+      dockerfile: Dockerfile
+    container_name: transitions
+    ports:
+      - 5000:5000
+    env_file:
+      - .env.production  
+    volumes:
+      - ./transitions:/usr/src/app
+      - /usr/src/app/node_modules
+  my-app:  
+    stdin_open: true  
+    build:
+      context: ./my-app
+      dockerfile: Dockerfile
+    container_name: my-app  
+    ports:
+      - 3000:3000
+    env_file:
+      - .env.production
+    volumes:
+      - /app/node_modules   # Keep the node_modules in the container
+      - ./my-app:/app       # Map the app code to /app in the container
+volumes:
+  nps_data: {}

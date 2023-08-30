@@ -1,0 +1,30 @@
+/* style.module.css */
+/* Add these custom styles for text inputs */
+input[type='text'] {
+    /* Add additional styles here for text inputs */
+    /* For example, let's change the background color and text color */
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  /* Add any other custom styles for the inputs and form container as needed */
+  .form-container {
+    /* Add some spacing around the form */
+    padding: 20px;
+    /* Add a box-shadow to create a visual separation from the rest of the page */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Add some border-radius to soften the edges */
+    border-radius: 8px;
+    /* Add a background color */
+    background-color: #ffffff;
+    /* Center the form container horizontally */
+    margin: 0 auto;
+    /* Add some space between each element */
+    gap: 15px;
+  }
+  
+  /* Align the labels to the right side for a more compact look */
+  label {
+    text-align: right;
+  }
+  
