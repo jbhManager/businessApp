@@ -3,8 +3,8 @@ import FormUser from './components/FormUser';
 import FormTransition from './components/‏‏FormTransition';
 import API from '../src/Api';
 import './App.css';
-// import User from '../src/model/userModel';
-import User from 'jbhmanager'
+import User from '../src/model/userModel';
+// import User from './../../model/userModel'
 
 function App() {
   const [showFormUser, setShowFormUser] = useState(false);

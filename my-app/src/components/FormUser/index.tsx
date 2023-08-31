@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 // import apiRequest from '../../tools/RestApi';
 import API from '../../Api';
 import styles from './style.module.css';
-import { UserWithNoId } from 'jbhmanager';
+import { UserWithNoId } from './../../model/userModel';
 
 type FormUserProps = {
   setShowFormUser: React.Dispatch<React.SetStateAction<boolean>>;

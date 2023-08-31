@@ -3,7 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 // import apiRequest from '../../tools/RestApi';
 import API from '../../Api';
 import styles from './style.module.css';
-import { UserWithNoId } from 'jbhmanager';
+import { TransitionsWithNoId } from './../../model/transitionModel';
 
 
 type FormTransitionProps = {
@@ -15,9 +15,9 @@ const FormTransition: React.FC<FormTransitionProps> = ({ setShowFormTransition }
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<UserWithNoId>();
+  } = useForm<TransitionsWithNoId>();
 
-  const onSubmit: SubmitHandler<UserWithNoId> = (data) => {
+  const onSubmit: SubmitHandler<TransitionsWithNoId> = (data) => {
     // apiRequest('/users', 'POST', data)
     //   .then((response) => {
     //     console.log('create user ', response);

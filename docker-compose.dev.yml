@@ -12,6 +12,7 @@ services:
     volumes:
       - ./users:/usr/src/app
       - /usr/src/app/node_modules
+      - ./model:/usr/src/app/src/model
   api_transitions:
     build:
       context: ./transitions
@@ -24,6 +25,7 @@ services:
     volumes:
       - ./transitions:/usr/src/app
       - /usr/src/app/node_modules
+      - ./model:/usr/src/app/src/model
   my-app:  
     stdin_open: true  
     build:
@@ -36,7 +38,8 @@ services:
       - .env.development
     volumes:
       - /app/node_modules   # Keep the node_modules in the container
-      - ./my-app:/app       # Map the app code to /app in the container
+      - ./my-app:/app   
+      - ./model:/app/src/model    # Map the app code to /app in the container
   db:
     image: postgres:15.2
     container_name: db_tst
